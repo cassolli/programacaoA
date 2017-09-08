@@ -1,0 +1,12 @@
+1)Escreva um laço while que execute 20 vezes, imprimindo o valor da 
+variável x que inicialmente está com valor 10. 
+Converta este laço para um do-while.
+
+2)Implemente um programa que recebe um número de 1 a 7 e imprime o dia da semana correspondente.
+
+3)Implemente um programa que recebe repetidamente um número de 1 a 12, enquanto esse número for diferente de 0 (zero), e imprime o mês correspondente. Quando o número estiver fora do intervalo permitido, a mensagem “mês inválido” deverá ser exibida.
+
+4) Desenvolva um programa que dado um número inteiro o programa informe se o mesmo é um número primo.
+
+5) Fulano aplicou R$ 100,00 com rendimento de 5% ao mês. Quantos meses serão necessários para o capital investido ultrapasse a Re 200,00. Desenvolva um programa que realize essa operação. O Caso o mês for igual a janeiro então o programa deve adicionar mais R$10,00 de juros.O sistema deve mostra a média
+

@@ -1,0 +1,63 @@
+16/08/2017
+Tarefa 1)
+
+1) Criar um Programa e comentar quais estão incorretas e ajustar 
+int x = 34.5;
+boolean resp = x;
+int g = 17;
+int y = g;
+y = y + 10;
+double t = 45;
+float p = 32.7;
+char resp;
+String n = ‘ana’;
+
+2)Quais as sequências de caracteres são válidas na declaração de variáveis? E comentar o porque.
+
+• a123 
+• sal * 
+• 1interface 
+• _nome 
+• $$a 
+• valores reais
+
+23/08/2017
+
+1)Faça um programa que leia três variáveis do tipo int e que calcula e mostra o produto dos três inteiros e a
+divisão do primeiro pelo segundo.
+
+2)Faça um programa que leia dois valores e calcula o resto da divisão do segundo pelo primeiro.
+
+3)Elaborar um programa que leia dois valores inteiros e troque o valor, a e b de forma que a fique com o valor de
+b, b com o valor de a.
+
+4)Leia três notas de um aluno e calcule sua média aritmética.
+
+5)Faça um programa que leia dois valores do tipo float e calcule +, -, *, / e o %.
+
+6)Crie um programa que peça o nome e a altura de uma pessoa em centímetros e apresente na tela o nome e a
+altura em metros.
+
+7)Crie um programa que leia 5 números inteiros e apresente a soma de todos os números lidos.
+8. Faça um programa que leia a idade de uma pessoa expressa em anos, meses e dias e mostre-a expressa
+apenas em dias.
+9)Faça um programa que leia a idade de uma pessoa expressa em dias e mostre-a expressa em anos, meses e
+dias.
+10)Faça um programa que leia as 3 notas de um aluno e calcule a média final deste aluno. Considerar que a
+média é ponderada e que o peso das notas é: 2, 3 e 5, respectivamente.
+11)Faça um programa que leia o tempo de duração de um evento em uma fábrica expressa em segundos e
+mostre-o expresso em horas, minutos e segundos.
+12)O custo ao consumidor de um carro novo é a soma do custo de fábrica com a porcentagem do distribuidor e
+dos impostos (aplicados ao custo de fábrica). Supondo que a porcentagem do distribuidor seja de 28% e os
+impostos de 45%, escrever um programa que leia o custo de fábrica de um carro e escreva o custo ao
+consumidor.
+
+30/08/2017 ===============================================================================================================
+13. Faça um algoritmo para ler o salário de um funcionário e aumentá-lo em 15%. Após o aumento, desconte 8%
+de impostos. Imprima o salário inicial, o salário com o aumento e o salário final.
+14. Faça um programa que calcule e mostre a área de um trapézio. Sabe-se que: A = (base maior + base menor) *
+altura)/2 ;
+15. Faça um programa que calcule e mostre a área de um quadrado. Sabe-se que: A = lado * lado;
+16. Um funcionário recebe um salário fixo mais 4% de comissão sobre as vendas. Faça um programa que receba
+o salário fixo de um funcionário e o valor de suas vendas, calcule e mostre a comissão e o salário final do
+funcionário.
