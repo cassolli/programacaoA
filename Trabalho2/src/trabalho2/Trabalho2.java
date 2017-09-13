@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package trabalho2;
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -135,6 +136,56 @@ if (ehprimo == 0 ){
 }
    
 /**
+* 5) Fulano aplicou R$ 100,00 com rendimento de 5% ao mês. Quantos
+* meses serão necessários para o capital investido ultrapasse a R$
+* 200,00. Desenvolva um programa que realize essa operação. O Caso o
+* mês for igual a janeiro então o programa deve adicionar mais R$10,00
+* de juros.O sistema deve mostra a média
+*/
+        float aplic = 100.00f;
+        float rend = 0.05f;
+        float rendimento = 0.00f;
+        float base = 0.00f;
+        int count = 0;
+        int ano = 2017;
+        float juros = 0.0f;
+        int mesatual = 9;
+        System.out.println("RESULTADO PARCIAL:");
+        while (aplic < 200) {
+            count++;
+            mesatual += 1;
+            if (mesatual > 12) {
+                mesatual = 1;
+                ano += 1;
+            }
+
+            if (mesatual == 1) {
+                aplic = aplic + 10.00f;
+
+            }
+
+            base = aplic;
+            rendimento = aplic * rend;
+            aplic = rendimento + aplic;
+            juros = (aplic - 100.00f) / count;
+            System.out.println("Total atual: "+aplic+", média de juros: " + 
+                    juros + ", base: de cálculo: " + base +
+                    ", quantidade de acréscimos: " + count + ", data: " + 
+                    mesatual + "/" + ano);
+            
+        }
+       // ini--;
+        DecimalFormat df = new DecimalFormat("0.00");
+        String str_aplic = df.format(aplic);
+        String str_juros = df.format(juros);
+        String str_base = df.format(base);
+        System.out.println("RESULTADO FINAL:");
+        System.out.println("Total atual: R$ " + str_aplic + 
+                ", média de juros: R$ " +  str_juros +
+                ", base: de cálculo: R$ " +  str_base + 
+                ", quantidade de acréscimos: " + count + 
+                ", data: " + mesatual + "/" + ano);
+
 
     }
     
