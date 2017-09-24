@@ -125,15 +125,24 @@ if(mes < 0||mes >12){
 /** 
 4) Desenvolva um programa que dado um número inteiro o programa informe se o mesmo é um número primo.
 */
-JOptionPane.showMessageDialog(null,"Informe um número inteiro e te direi se é um número primo !!!");
-String str_primo = JOptionPane.showInputDialog("Informe o número!");
-int primo =Integer.parseInt(str_primo);
-float ehprimo = primo%2;
-if (ehprimo == 0 ){
-    JOptionPane.showMessageDialog(null,primo+" não é um número primo.");
-}else{
-    JOptionPane.showMessageDialog(null,primo+" é um número primo.");
-}
+
+System.out.print("Exercicio 4.\n");
+
+  String numero;
+  int count1;
+  int str_numero;
+  numero=JOptionPane.showInputDialog("Digite um número e te direi se é um número primo!");
+  str_numero=Integer.parseInt(numero);
+  count1=0;
+    for (int i=1;i<=str_numero;i++ ){
+     if(str_numero%i == 0)
+     count1++;
+  }
+       if (count1==2){
+   JOptionPane.showMessageDialog(null, "O numero " +str_numero+ " é número primo.");
+  }else{
+   JOptionPane.showMessageDialog(null,"O numero " +str_numero+ " não é um número primo.");
+  }   
    
 /**
 * 5) Fulano aplicou R$ 100,00 com rendimento de 5% ao mês. Quantos
@@ -142,6 +151,7 @@ if (ehprimo == 0 ){
 * mês for igual a janeiro então o programa deve adicionar mais R$10,00
 * de juros.O sistema deve mostra a média
 */
+System.out.print("Exercicio 5.\n");
         float aplic = 100.00f;
         float rend = 0.05f;
         float rendimento = 0.00f;

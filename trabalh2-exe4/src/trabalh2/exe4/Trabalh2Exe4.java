@@ -20,19 +20,21 @@ public class Trabalh2Exe4 {
       /** 
 4) Desenvolva um programa que dado um número inteiro o programa informe se o mesmo é um número primo.
 */
-String entrada;
-  int n,cont;
-  entrada=JOptionPane.showInputDialog("informe um numero");
-  n=Integer.parseInt(entrada);
-  cont=0;
-  for (int i=1;i<=n;i++ ){
-   if(n%i == 0)
-   cont++;
+
+  String numero;
+  int count;
+  int str_numero;
+  numero=JOptionPane.showInputDialog("Digite um número e te direi se é um número primo!");
+  str_numero=Integer.parseInt(numero);
+  count=0;
+  for (int i=1;i<=str_numero;i++ ){
+   if(str_numero%i == 0)
+   count++;
   }
-  if (cont==2){
-   JOptionPane.showMessageDialog(null, "o numero " +n+ " é primo");
+  if (count==2){
+   JOptionPane.showMessageDialog(null, "O numero " +str_numero+ " é número primo.");
   }else{
-   JOptionPane.showMessageDialog(null,"o numero " +n+ " não é primo");
+   JOptionPane.showMessageDialog(null,"O numero " +str_numero+ " não é um número primo.");
   }   
     }
     
