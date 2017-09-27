@@ -1,0 +1,8 @@
+http://www.guj.com.br/t/converter-uma-string-para-float/99755/2
+
+Integer.parseInt(string)
+Double.parseDouble(string)
+Float.parseFloat(string)
+Boolean.parseBoolean(string
+
+////////////////
