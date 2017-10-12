@@ -5,6 +5,8 @@
  */
 package exerciciospreprova1;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author cassolli
@@ -15,6 +17,8 @@ public class ExerciciosPreProva1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        JOptionPane.showMessageDialog(null,"Haviam 4 exercicios mas estavam duplicados, tirando as duplicidades,\nencontrei dois exercicios que fiz em duas classes, para testar mande executar cada classe!"); 
+                
 /**Usar Joptionpane , usar while ou for ...exemplo voce pode solicitar se o usuário gostaria de continuar.. 
  * Entregar até o dia 27/09 as 19:00
  *
