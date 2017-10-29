@@ -16,10 +16,7 @@ public class Aula8Trabalho {
      */
     public static void main(String[] args) {
         /*
-1. Implemente um aplicativo que cadastre uma pessoa com os seguintes atributos: nome , endereço , telefone e idade, caso idade menor de 18 anos o aplicativo deve contar quantos usuários menores de 18 anos.
-2. Ler vários números e mostrar a quantidade de pares.
-3. Mostrar os números ímpares entre 1 e 500, inclusive, em ordem decrescente. 
-
+        Uma classe para cada questão
         */
     }
     
