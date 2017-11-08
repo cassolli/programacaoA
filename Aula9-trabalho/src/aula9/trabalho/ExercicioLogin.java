@@ -124,9 +124,8 @@ public class ExercicioLogin extends javax.swing.JFrame {
        try {
            //Conexão MySQl
     conn =
-       DriverManager.getConnection("jdbc:mysql://localhost/cassolli?" +
-                                   "user=root&password=123456");
-
+        DriverManager.getConnection("jdbc:mysql://mysql.cassolli.kinghost.net/cassolli04?" +
+                                   "user=cassolli04&password=54ye37e2");
     // Select
     String txt_usuario = usuario.getText();
     String txt_senha = senha.getText();
@@ -140,27 +139,29 @@ public class ExercicioLogin extends javax.swing.JFrame {
     // execurtar a query
       ResultSet result = st.executeQuery(query);
     
-    if (result.isBeforeFirst()){
-         while (result.next())
-      {
-       String getusuario = result.getString("usuario");
-       String getsenha = result.getString("senha");
-        if(txt_senha.equals(getsenha))
-          {
-              //fechar tela de login
-              dispose();
-              JOptionPane.showMessageDialog(null,"Usuário Logado!!!");
-              ExercicioLogin2 nomeVariavel = new ExercicioLogin2();
-              nomeVariavel.setVisible(true);
+     //if (result.next())
+      if (result.isBeforeFirst())
+            {
+                while (result.next())
+                {
+                String getusuario = result.getString("usuario");
+                String getsenha = result.getString("senha");
+                    if(txt_senha.equals(getsenha))
+                        {
+                         //fechar tela de login
+                         dispose();
+                         JOptionPane.showMessageDialog(null,"Usuário Logado!!!");
+                         ExercicioLogin2 nomeVariavel = new ExercicioLogin2();
+                         nomeVariavel.setVisible(true);
                
-          }else
-          {
-              JOptionPane.showMessageDialog(null,"Usuário ou senha incorreta :/"); 
-          }
-       }
-    }else{
-           JOptionPane.showMessageDialog(null,"Usuário não encontrado :/");  
-    }
+                        }else
+                        {
+                            JOptionPane.showMessageDialog(null,"Usuário ou senha incorreta :/"); 
+                        }
+                }
+            }else{
+                  JOptionPane.showMessageDialog(null,"Usuário não encontrado :/");  
+            }
     
      // se o select retornase registros e tivesse que filtrar para comparar pode ser usado o exmeplo abaixo
     /**  while (result.next())
@@ -184,14 +185,14 @@ public class ExercicioLogin extends javax.swing.JFrame {
        }
       */ 
      // }
-      
-      st.close();
-} catch (SQLException ex) {
-    // handle any errors
+            //fechar conexão
+            st.close();
+            } catch (SQLException ex) {
+         //Erros
     
-    System.out.println("SQLException: " + ex.getMessage());
-   System.out.println("SQLState: " + ex.getSQLState());
-   System.out.println("VendorError: " + ex.getErrorCode());
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
 }
     }//GEN-LAST:event_jButton1ActionPerformed
 

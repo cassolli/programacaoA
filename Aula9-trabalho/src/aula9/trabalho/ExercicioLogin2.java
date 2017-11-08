@@ -166,47 +166,49 @@ public class ExercicioLogin2 extends javax.swing.JFrame {
        Connection conn = null;
        try {
            //Conexão MySQl
-    conn =
-       DriverManager.getConnection("jdbc:mysql://localhost/cassolli?" +
-                                   "user=root&password=123456");
+        conn =
+        DriverManager.getConnection("jdbc:mysql://mysql.cassolli.kinghost.net/cassolli04?" +
+                                   "user=cassolli04&password=54ye37e2");
 
-    // Select
-    String txt_novousuario = novousuario.getText();
-    String txt_novasenha = novasenha.getText();
-    Statement st = conn.createStatement();
-    String select =  "SELECT usuario FROM login where usuario = '"+txt_novousuario+"'";
-    ResultSet result = st.executeQuery(select);
-     System.out.print("Query "+select+"\n");
-    if (result.next())
+    
+        String txt_novousuario = novousuario.getText();
+        String txt_novasenha = novasenha.getText();
+        Statement st = conn.createStatement();
+        // Select
+        String select =  "SELECT usuario FROM login where usuario = '"+txt_novousuario+"'";
+        ResultSet result = st.executeQuery(select);
+        System.out.print("Query "+select+"\n");
+        if (result.next())
             {
                  
                JOptionPane.showMessageDialog(null,"Usuário Existente");
                  
             }else 
-    {
-        JOptionPane.showMessageDialog(null,"Usuário Cadastrado");
-    }
-    String insert = "insert into login (usuario, senha) values ('"+txt_novousuario+"','"+txt_novasenha+"')";
-     //debug query
-     System.out.print("Query "+insert+"\n");
-    // Criar conexão
+            {
+                String insert = "insert into login (usuario, senha) values ('"+txt_novousuario+"','"+txt_novasenha+"')";
+                //debug query
+                System.out.print("Query "+insert+"\n");
+                // Criar conexão
     
-      st.execute(insert);
-    st.close();
-} catch (SQLException ex) {
-    // handle any errors
+            st.execute(insert);    
+                JOptionPane.showMessageDialog(null,"Usuário Cadastrado");
+            }
     
-    System.out.println("SQLException: " + ex.getMessage());
-   System.out.println("SQLState: " + ex.getSQLState());
-   System.out.println("VendorError: " + ex.getErrorCode());
-}
+            st.close();
+            } catch (SQLException ex) {
+        //Erros
+    
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
 
     }//GEN-LAST:event_insertActionPerformed
 
     private void logoffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoffActionPerformed
  //fechar tela de login
               dispose();
-              JOptionPane.showMessageDialog(null,"Loggoff Feito");
+              JOptionPane.showMessageDialog(null,"Saiu!!");
               ExercicioLogin nomeVariavel = new ExercicioLogin();
               nomeVariavel.setVisible(true);
     }//GEN-LAST:event_logoffActionPerformed
