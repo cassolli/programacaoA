@@ -28,8 +28,7 @@ public class Aula10Exercicio2 {
      //variaveis para concatenar os nomes na ordem normal e inversa para exibir no final do programa
      String semon = "";
      String nomesordem = "";
-     //Ver quantos itens gostaria de inserir para criar o array dinamicamente
-         
+    
      //iniciar array
      String nomes[];
      nomes = new String[5];

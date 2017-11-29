@@ -11,12 +11,12 @@ import javax.swing.JOptionPane;
  *
  * @author cassolli
  */
-public class Aula10Exercicio4b extends javax.swing.JFrame {
+public class Aula10Exercicio4 extends javax.swing.JFrame {
 
     /**
      * Creates new form Aula10Exercicio4b
      */
-    public Aula10Exercicio4b() {
+    public Aula10Exercicio4() {
         initComponents();
     }
     String JogadorX = "jogando";
@@ -26,6 +26,7 @@ public class Aula10Exercicio4b extends javax.swing.JFrame {
     String JogadorONome = JOptionPane.showInputDialog("Qual o Nome do Segundo Jogador");
     
     public void TrocaJogador(){
+        //funcao para saber que usuario esta jogando
         if (JogadorX == "jogando"){ 
             JogadorX = "nao";
             JogadorO = "jogando";
@@ -35,10 +36,11 @@ public class Aula10Exercicio4b extends javax.swing.JFrame {
             JogadorX = "jogando";
             JogadorO = "nao";
             JogadorNome = JogadorONome;
-                Valida();
+            Valida();
         }
     }
     public void Reseta(){
+        //funcao para resetar variaveis
         botao0.setText("");
         botao1.setText("");
         botao2.setText("");
@@ -48,9 +50,10 @@ public class Aula10Exercicio4b extends javax.swing.JFrame {
         botao6.setText("");
         botao7.setText("");
         botao8.setText("");
+        JogadorNome = "";
         JogadorX = "jogando";
-        String JogadorXNome = JOptionPane.showInputDialog("Qual o Nome do Primeiro Jogador");
-        String JogadorONome = JOptionPane.showInputDialog("Qual o Nome do Segundo Jogador");
+        JogadorXNome = JOptionPane.showInputDialog("Qual o Nome do Primeiro Jogador");
+        JogadorONome = JOptionPane.showInputDialog("Qual o Nome do Segundo Jogador");
     }   
     
     
@@ -60,6 +63,7 @@ public class Aula10Exercicio4b extends javax.swing.JFrame {
         String[][] valida = new String[n][n];
          for (int x=0; x < valida.length; x++){
             for (int y=0; y < valida.length; y++){
+                //popular as posições do array com a valor dos botões
                      valida[0][0] = botao0.getText();
                      valida[0][1] = botao1.getText();
                      valida[0][2] = botao2.getText();
@@ -72,35 +76,37 @@ public class Aula10Exercicio4b extends javax.swing.JFrame {
                      System.out.println(cont+" - Voce digitou na posição ["+x+"]["+y+"]"+valida[x][y]);
             }
          }
-           
+           //validacao para ver quem ganhou
                     if(valida[0][0].equals("X") && valida[0][1].equals("X") && valida[0][2].equals("X") || valida[0][0].equals("O") && valida[0][1].equals("O") && valida[0][2].equals("O") ){
-                         JOptionPane.showMessageDialog(null, "Vitoria do jogador"+JogadorNome);
+                         JOptionPane.showMessageDialog(null, "Vitoria do jogador "+JogadorNome);
                     Reseta();    
                          
                     }if(valida[1][0].equals("X") && valida[1][1].equals("X") && valida[1][2].equals("X") || valida[1][0].equals("O") && valida[1][1].equals("O") && valida[1][2].equals("O") ){
-                        JOptionPane.showMessageDialog(null, "Vitoria do jogador"+JogadorNome);
-                       
+                        JOptionPane.showMessageDialog(null, "Vitoria do jogador "+JogadorNome);
+                    Reseta();  
                     
                     }if(valida[2][0].equals("X") && valida[2][1].equals("X") && valida[2][2].equals("X") || valida[2][0].equals("O") && valida[2][1].equals("O") && valida[2][2].equals("O")){
-                        JOptionPane.showMessageDialog(null, "Vitoria do jogador"+JogadorNome);
-                    
+                        JOptionPane.showMessageDialog(null, "Vitoria do jogador "+JogadorNome);
+                    Reseta();
                         
                     }if(valida[0][0].equals("X") && valida[1][1].equals("X") && valida[2][2].equals("X") ){
-                        JOptionPane.showMessageDialog(null, "Vitoria do jogador"+JogadorNome);    
-                    
+                        JOptionPane.showMessageDialog(null, "Vitoria do jogador "+JogadorNome);    
+                    Reseta();
                     }if(valida[0][2].equals("X") && valida[1][1].equals("X") && valida[2][0].equals("X")){
-                        JOptionPane.showMessageDialog(null, "Vitoria do jogador"+JogadorNome);    
-    
+                        JOptionPane.showMessageDialog(null, "Vitoria do jogador "+JogadorNome);    
+                    Reseta();
                         
                     }if(valida[0][0].equals("X") && valida[1][0].equals("X") && valida[2][0].equals("X") || valida[0][0].equals("O") && valida[1][0].equals("O") && valida[2][0].equals("O")){
-                        JOptionPane.showMessageDialog(null, "Vitoria do jogador"+JogadorNome);
-                        
+                        JOptionPane.showMessageDialog(null, "Vitoria do jogador "+JogadorNome);
+                    Reseta();    
                     }if(valida[0][1].equals("X") && valida[1][1].equals("X") && valida[2][1].equals("X") || valida[0][1].equals("O") && valida[1][1].equals("O") && valida[2][1].equals("O")){
-                        JOptionPane.showMessageDialog(null, "Vitoria do jogador"+JogadorNome);  
-                    
+                        JOptionPane.showMessageDialog(null, "Vitoria do jogador "+JogadorNome);  
+                    Reseta();
                     }if(valida[0][2].equals("X") && valida[1][2].equals("X") && valida[2][2].equals("X") || valida[0][2].equals("O") && valida[1][2].equals("O") && valida[2][2].equals("O")){
-                        JOptionPane.showMessageDialog(null, "Vitoria do jogador"+JogadorNome);  
+                        JOptionPane.showMessageDialog(null, "Vitoria do jogador "+JogadorNome);
+                    Reseta();    
                     }
+                    //validacao para ver se deu empate 
                       if(!botao0.getText().equals("") && 
                        !botao1.getText().equals("") && 
                        !botao2.getText().equals("") && 
@@ -111,19 +117,12 @@ public class Aula10Exercicio4b extends javax.swing.JFrame {
                        !botao7.getText().equals("") &&
                        !botao8.getText().equals("")){
                       JOptionPane.showMessageDialog(null,"Todo mundo ganhou, pois empatou =)");
-                       } 
+                      Reseta();
+                      } 
                     
     
-             /**        String botao = "";
-            botao += "botao"+1;
-            valida[x][y] = botao0.getText();       
-      */              
-// valida[x][y][y] = JOptionPane.showInputDialog("Informe o ["+x+"]["+i+"] nome.");
-                
-    
-         
-     //debug
- System.out.println("Proximo");  
+            
+ //System.out.println("Proximo");  
     }
 
     /**
@@ -288,48 +287,37 @@ public class Aula10Exercicio4b extends javax.swing.JFrame {
             }else{
          if (JogadorX == "jogando"){
                botao0.setText("X");
-                //debug
-         //System.out.println(JogadorX+" - "+JogadorO);
                TrocaJogador();
-                            //debug
-         //System.out.println(JogadorX+" - "+JogadorO);
+
             }else {
                botao0.setText("O");
-                               //debug
-         //System.out.println(JogadorX+" - "+JogadorO);
+
                TrocaJogador();
-                               //debug
-         //System.out.println(JogadorX+" - "+JogadorO);
+
          }
          }
          cont = 0;
     }//GEN-LAST:event_botao0ActionPerformed
 
     private void botao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao1ActionPerformed
-         if(botao1.getText().equals("X") || botao1.getText().equals("O")){
+        //valida se já ocorreu alguma jogada no botão 
+        if(botao1.getText().equals("X") || botao1.getText().equals("O")){
                 JOptionPane.showMessageDialog(null, "Você não pode jogar em uma coluna com valor");
             }else{
          if (JogadorX == "jogando"){
                botao1.setText("X");
-                               //debug
-         //System.out.println(JogadorX+" - "+JogadorO);
                TrocaJogador();
-                               //debug
-        // System.out.println(JogadorX+" - "+JogadorO);
             }else {
                botao1.setText("O");
-                               //debug
-        // System.out.println(JogadorX+" - "+JogadorO);
                TrocaJogador();
-                               //debug
-         //System.out.println(JogadorX+" - "+JogadorO);
          }
          }
          cont = 1;
     }//GEN-LAST:event_botao1ActionPerformed
 
     private void botao2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao2ActionPerformed
-         if(botao2.getText().equals("X") || botao2.getText().equals("O")){
+        //valida se já ocorreu alguma jogada no botão  
+        if(botao2.getText().equals("X") || botao2.getText().equals("O")){
                 JOptionPane.showMessageDialog(null, "Você não pode jogar em uma coluna com valor");
             }else{
          if (JogadorX == "jogando"){
@@ -344,6 +332,7 @@ public class Aula10Exercicio4b extends javax.swing.JFrame {
     }//GEN-LAST:event_botao2ActionPerformed
 
     private void botao3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao3ActionPerformed
+        //valida se já ocorreu alguma jogada no botão 
         if(botao3.getText().equals("X") || botao3.getText().equals("O")){
                 JOptionPane.showMessageDialog(null, "Você não pode jogar em uma coluna com valor");
             }else{
@@ -358,7 +347,8 @@ public class Aula10Exercicio4b extends javax.swing.JFrame {
     }//GEN-LAST:event_botao3ActionPerformed
 
     private void botao4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao4ActionPerformed
- if(botao4.getText().equals("X") || botao4.getText().equals("O")){
+ //valida se já ocorreu alguma jogada no botão 
+        if(botao4.getText().equals("X") || botao4.getText().equals("O")){
                 JOptionPane.showMessageDialog(null, "Você não pode jogar em uma coluna com valor");
             }else{
          if (JogadorX == "jogando"){
@@ -372,7 +362,8 @@ public class Aula10Exercicio4b extends javax.swing.JFrame {
     }//GEN-LAST:event_botao4ActionPerformed
 
     private void botao5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao5ActionPerformed
- if(botao5.getText().equals("X") || botao5.getText().equals("O")){
+ //valida se já ocorreu alguma jogada no botão 
+        if(botao5.getText().equals("X") || botao5.getText().equals("O")){
                 JOptionPane.showMessageDialog(null, "Você não pode jogar em uma coluna com valor");
             }else{
          if (JogadorX == "jogando"){
@@ -385,7 +376,8 @@ public class Aula10Exercicio4b extends javax.swing.JFrame {
          }    }//GEN-LAST:event_botao5ActionPerformed
 
     private void botao6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao6ActionPerformed
- if(botao6.getText().equals("X") || botao6.getText().equals("O")){
+ //valida se já ocorreu alguma jogada no botão 
+        if(botao6.getText().equals("X") || botao6.getText().equals("O")){
                 JOptionPane.showMessageDialog(null, "Você não pode jogar em uma coluna com valor");
             }else{
          if (JogadorX == "jogando"){
@@ -398,7 +390,8 @@ public class Aula10Exercicio4b extends javax.swing.JFrame {
          }    }//GEN-LAST:event_botao6ActionPerformed
 
     private void botao7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao7ActionPerformed
- if(botao7.getText().equals("X") || botao7.getText().equals("O")){
+ //valida se já ocorreu alguma jogada no botão 
+        if(botao7.getText().equals("X") || botao7.getText().equals("O")){
                 JOptionPane.showMessageDialog(null, "Você não pode jogar em uma coluna com valor");
             }else{
          if (JogadorX == "jogando"){
@@ -411,7 +404,7 @@ public class Aula10Exercicio4b extends javax.swing.JFrame {
          }    }//GEN-LAST:event_botao7ActionPerformed
 
     private void botao8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao8ActionPerformed
-       
+    //valida se já ocorreu alguma jogada no botão    
         if(botao8.getText().equals("X") || botao8.getText().equals("O")){
                 JOptionPane.showMessageDialog(null, "Você não pode jogar em uma coluna com valor");
             }else{
@@ -451,20 +444,21 @@ public class Aula10Exercicio4b extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Aula10Exercicio4b.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Aula10Exercicio4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Aula10Exercicio4b.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Aula10Exercicio4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Aula10Exercicio4b.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Aula10Exercicio4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Aula10Exercicio4b.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Aula10Exercicio4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Aula10Exercicio4b().setVisible(true);
+                new Aula10Exercicio4().setVisible(true);
             }
         });
     }
